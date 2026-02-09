@@ -13,15 +13,49 @@ namespace _13._3_tdd_Geometrie
         private int breite;
         private int hoehe;
 
+
+        public Rechteck() // Parameterloser Konstruktor
+        {
+            Breite = 0;
+            Hoehe = 0;
+        }
+
+        public Rechteck(int breite, int hoehe)
+        {
+            Breite = breite;
+            Hoehe = hoehe;
+
+        }
+
         public int Breite { 
             get { return breite; } 
-            set { breite = value; }
+            set {
+                if (value < 0)
+                    throw new ArgumentOutOfRangeException(nameof(Breite)); // Exception für Breite_ZuNiedrigerWertWirftException()
+                breite = value;
+            }
             
         }
         public int Hoehe { 
             get { return hoehe; } 
-            set { hoehe = value; }
+            set {
+                if (value < 0)
+                    throw new ArgumentOutOfRangeException(nameof(Hoehe)); // Exception für Hoehe_ZuNiedrigerWertWirftException()
+
+                hoehe = value;
+            }
         }
+
+        public int Umfang()  // Umfang definieren
+        {
+            return 2 * (breite + hoehe);
+        }
+
+        public int Flaeche() // Fläche definieren
+        {
+            return breite * hoehe;
+        }
+
 
         public void Skalieren(double faktor)
         {

@@ -14,6 +14,7 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
         {
             // Arrange
 
+
             // Act
             Rechteck r = new Rechteck();
 
@@ -71,7 +72,7 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
         {
             // Arrange
             Rechteck r = new Rechteck();
-
+            
             // Act
             r.Hoehe = -1;
         }
@@ -86,6 +87,7 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
 
             // Act
             int ergebnis = r.Umfang();
+            
 
             // Assert
             Assert.AreEqual(60, ergebnis);
@@ -115,6 +117,7 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
 
             // Act
             Rechteck r = new Rechteck(breite, hoehe);
+
             
             // Assert
             Assert.AreEqual(breite, r.Breite);
